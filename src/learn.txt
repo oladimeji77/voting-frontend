@@ -1,0 +1,210 @@
+install es7 react ext
+install prettier ext
+install ayu theme
+
+To install react
+npm create vite@latest
+select react, select javascript
+
+  cd first-app
+  npm install
+  npm run dev
+
+  create a new src folder
+
+##################################################################################################
+javascript  basics
+  ## variable assignment usin var, const and latest
+  var is available globally
+  let can be reassigned and it is scoped
+  const cannot be reassigned and also scoped
+
+##Function
+function sayHello() {
+  console.log("Say hello from main function");
+}
+
+const sayHello2 = (language) => {
+  console.log("Hello arrow function", language);
+};
+
+const sayHello3 = (language) => console.log("Simplified arrow function", language);
+
+sayHello();
+sayHello2("Yoruba");
+sayHello2("Success");
+
+###Dictionary Object
+const user = { name: "Oladimeji", age: 29, email: "oladimeji@gmail.com" };
+console.log(user.name);
+console.log(user.age);
+console.log(user.email);
+
+##Object de-structuring
+const user = { name: "Oladimeji", age: 29, email: "oladimeji@gmail.com" };
+const name = user.name
+const age = user.age
+const email = user.email
+console.log(name, age, email);
+
+instead of the above do this to save time
+const user = { name: "Oladimeji", age: 29, email: "oladimeji@gmail.com" };
+const {name, email:emailAddress, age} = user  #email renamed and you don't have to use all the objects
+console.log(name, emailAddress);
+
+#Map method
+const products = ["product1", "product2", "product3"];
+const productsres = products.map(function (items) {
+  return "<li>" + items + "</li>";
+});
+console.log(productsres);
+--Make it simpler
+const products = ["product1", "product2", "product3"];
+const productsres = products.map((items) => "<li>" + ite + "</li>"ms);
+console.log(productsres);
+--make it even more simpler
+const products = ["product1", "product2", "product3"];
+const productsres = products.map((items) => `<li>${items}</li>`);
+console.log(productsres);
+
+
+#Filter method
+const ages = [5, 7, 9, 12, 86, 43];
+console.log(ages);
+const adults = ages.filter((age) => {
+  return age > 16;
+});
+console.log(adults);
+--Simplified
+const adults = ages.filter((age) => age !== 86);
+console.log(adults);
+console.log(adults.length);
+
+#Spread Operator
+used to conbine list and dictionaries
+const arr1 = [1, 2, 3, 4];
+const arr2 = [7, 8, 9, 10];
+
+const addarr = arr1.concat(arr2);
+console.log(addarr);
+
+const spreadadd = [...arr1, 5, 6, ...arr2];
+console.log(spreadadd);
+
+const name = { name: "Oladimeji" };
+const age = { age: 29 };
+const user = { ...name, ...age, youtube: "yello world" };
+console.log(user);
+
+
+
+#Ternary operations (shortcuts for writing if else expression)
+condition? true expression : false expression
+const marks = 50;
+const result = marks > 35 ? "pass" : "Failed";
+console.log(result);
+
+#Modules
+is all about exporting and importing fucntions from one file to anther
+export default >>>>  import feed from "./feed"
+export >>>>  import {feed} from "./feed"
+
+#If else
+const counter = () => {
+    if (tasks === 0) {
+      return "No tasks available";
+    } else {
+      return `Tasks: ${tasks}`;
+    }
+  };
+
+#Ternary equivalent
+const counter = () => {
+    return tasks === 0 ? "No task found" : "Task is current";
+  };
+
+##################################################################################################
+React 
+
+
+###### useState hook
+it return two objects in an array
+firstobject is a variable, second object is a fucntion
+const [count, setCount] = useState(0);
+count is a variable, setCount is a function
+you can do setCount(count + 100)
+
+To handle input
+  const [text, setText] = useState("Enter Text");
+const textShow = (event) => {
+    setText(event.target.value);
+  };
+<input type="text" onChange={textShow} />
+
+##########################################################################################
+Sample code from class 1
+import React, { useState } from "react";
+
+const Todo = () => {
+  const [count, setCount] = useState(0);
+  const [text, setText] = useState("Enter Text");
+  const myArray = ["Oladimeji", "Oladepo", "Akinlabi"];
+  const counter = () => {
+    setCount(count + 1);
+  };
+  const textShow = (event) => {
+    setText(event.target.value);
+  };
+  return (
+    <>
+      <h1> My Counter: {count} </h1>
+      <h1> My Text: {text} </h1>
+      <input type="text" onChange={textShow} />
+      <button className="btn" onClick={counter} value="add task button">
+        Enter
+      </button>
+      <ul>
+        {myArray.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </>
+  );
+};
+export default Todo;
+##########################################################################################
+Importing images in React JS
+##########################################################################################
+To get inputs from forms
+const TaskForm = () => {
+  const [tasks, setTasks] = useState("");
+  const [status, setStatus] = useState("todo");
+
+  const handleInput = (e) => {
+    setTasks(e.target.value);
+  };
+
+  const handleStatus = (e) => {
+    setStatus(e.target.value);
+  };
+
+    const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(tasks, status);
+  };
+}
+##### to reference it in an iput area:
+  <input type="text"  name="task" onChange={handleInput}  />
+##### to reference it in an select dropdown area:
+<select name="status" onChange={handleStatus}>
+##### to reference it in a submit button:
+<form onSubmit={handleSubmit}> story story </form>
+###########################################################################
+<BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+      </Routes>
+    </BrowserRouter>
+          
+          
+       

@@ -9,10 +9,8 @@ const Result = () => {
       <Header
         heading="Presidential Result - Live Results Accross the 36 States"
         content="This is the result of the Presidential Elections has it 
-        is happening Live accorss the federation. This voting can be done via mobile and web."
+        is happening Live accorss the federation. This voting can be done via mobile and web browsers."
       />
-
-      
     </>
   );
 };

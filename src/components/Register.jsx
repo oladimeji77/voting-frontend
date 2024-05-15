@@ -19,7 +19,7 @@ const Register = (props) => {
   const onButtonClick = async () => {
     let item = { fname, lname, username, Password, Email };
 
-    let result = await fetch("http://172.208.41.79:9443/api/users", {
+    let result = await fetch(`${process.env.REACT_APP_API}/users`, {
       method: "POST",
       body: JSON.stringify(item),
       headers: {
@@ -27,6 +27,7 @@ const Register = (props) => {
         accept: "application/json",
       },
     });
+
     result = await result.json();
     localStorage.setItem("user-info", JSON.stringify(result));
     console.log("result", result);

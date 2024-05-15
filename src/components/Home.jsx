@@ -3,12 +3,13 @@ import Navbar from "./Navbar";
 import Header from "./Header";
 
 function Home() {
+  console.log(process.env.REACT_APP_API);
   return (
     <>
       <Navbar />
       <Header
         heading="The Presidency - Candidates for the Position of GCFR"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+        content="Welcome to the Voting Portal, consectetur adipiscing elit. Cras
             eleifend arcu et sem elementum faucibus. Vestibulum faucibus
             eleifend dolor, id luctus libero. Suspendisse commodo, orci eu
             mattis mattis, ante ligula porta tortor, ut scelerisque massa risus

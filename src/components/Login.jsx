@@ -14,7 +14,8 @@ const Login = (props) => {
   const navigate = useNavigate();
 
   const onLogin = async () => {
-    let result = await fetch("http://172.208.41.79:9443/api/auth/login", {
+    // let result = await fetch("http://172.208.41.79:9443/api/auth/login",
+    let result = await fetch(`${process.env.REACT_APP_API}/auth/login`, {
       method: "POST",
       headers: {
         Accept: "application/json",

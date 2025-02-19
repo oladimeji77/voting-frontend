@@ -139,7 +139,7 @@ function Home() {
           <div className="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
             <img
               className="rounded-pill shadow-md p-2"
-              src="assets/images/testimonial//member-05.png"
+              src="assets/images/testimonial/member-05.jpeg"
               alt=""
             />
             <h4 className="mt-3 fs-5 mb-1 fw-bold">Chris Okotie</h4>
@@ -169,7 +169,7 @@ function Home() {
           <div className="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
             <img
               className="rounded-pill shadow-md p-2"
-              src="assets/images/testimonial/member-06.png"
+              src="assets/images/testimonial/member-06.jpg"
               alt=""
             />
             <h4 className="mt-3 fs-5 mb-1 fw-bold">Omoyele Sowore</h4>

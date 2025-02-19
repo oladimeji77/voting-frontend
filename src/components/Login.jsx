@@ -4,18 +4,18 @@ import "./Login.css";
 import Navbar from "./Navbar";
 
 const Login = (props) => {
-  useEffect(() => {
-    if (localStorage.getItem("user-info")) {
-      navigate("/");
-    }
-  });
+  // useEffect(() => {
+  //   if (localStorage.getItem("user-info")) {
+  //     navigate("/");
+  //   }
+  // });
   const [username, setUsername] = useState("");
   const [password, setpassword] = useState("");
   const navigate = useNavigate();
 
   const onLogin = async () => {
     // let result = await fetch("http://172.208.41.79:9443/api/auth/login",
-    let result = await fetch(`${process.env.REACT_APP_API}/auth/login`, {
+    let result = await fetch(`${process.env.REACT_APP_API}login`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -34,7 +34,7 @@ const Login = (props) => {
 
       localStorage.setItem("user-info", JSON.stringify(data));
 
-      navigate("/");
+      navigate("/Otp");
     }
   };
 
@@ -59,6 +59,7 @@ const Login = (props) => {
         <br />
         <div className={"inputContainer"}>
           <input
+            type="password"
             value={password}
             placeholder="Enter your password here"
             onChange={(ev) => setpassword(ev.target.value)}
